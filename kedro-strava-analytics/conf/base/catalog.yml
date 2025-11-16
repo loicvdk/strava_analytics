@@ -1,0 +1,24 @@
+# Here you can define all your datasets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+# Raw Strava activities data
+raw_activities:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/strava_activities.csv
+
+# Streams enrichment data (detailed time-series data for activities)
+activity_streams:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/activity_streams.parquet
+
+# Metadata about which activities have streams data
+stream_metadata:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/stream_metadata.csv
+
+# Existing streams data for incremental loading
+existing_streams:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/activity_streams.parquet

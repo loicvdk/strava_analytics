@@ -1,0 +1,27 @@
+# Data ingestion parameters
+max_activities: 1000
+existing_activities_filepath: data/01_raw/strava_activities.csv
+existing_streams_filepath: data/02_intermediate/activity_streams.parquet
+
+# Rate limiting settings
+api_rate_limit:
+  max_requests_per_15_minutes: 95
+  max_daily_requests: 950
+
+# Streams enrichment parameters
+streams_enrichment:
+  rate_limit_delay: 1.0  # Delay between batch requests in seconds
+  max_concurrent_requests: 10  # Maximum concurrent API requests per batch
+  save_every_n_batches: 1  # Save intermediate results every N batches for crash recovery
+  stream_types:  # Available stream types from Strava API
+    - time
+    - distance
+    - latlng
+    - altitude
+    - velocity_smooth
+    - heartrate
+    - cadence
+    - watts
+    - temp
+    - moving
+    - grade_smooth
