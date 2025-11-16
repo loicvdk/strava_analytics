@@ -224,20 +224,20 @@ def activities_list() -> rx.Component:
                                 rx.spacer(),
                                 rx.hstack(
                                     rx.vstack(
-                                        rx.text("Distance", size="1", color="gray.500"),
-                                        rx.text(activity.distance_km + " km", weight="medium", color="gray.800"),
+                                        rx.text("Distance (km)", size="1", color="gray.500"),
+                                        rx.text(activity.distance_km, weight="medium", color="gray.800"),
                                         spacing="1",
                                         align="center"
                                     ),
                                     rx.vstack(
-                                        rx.text("Time", size="1", color="gray.500"),
-                                        rx.text(activity.time_minutes + " min", weight="medium", color="gray.800"),
+                                        rx.text("Time (min)", size="1", color="gray.500"),
+                                        rx.text(activity.time_minutes, weight="medium", color="gray.800"),
                                         spacing="1",
                                         align="center"
                                     ),
                                     rx.vstack(
-                                        rx.text("Pace", size="1", color="gray.500"),
-                                        rx.text(activity.pace + " min/km", weight="medium", color="gray.800"),
+                                        rx.text("Pace (min/km)", size="1", color="gray.500"),
+                                        rx.text(activity.pace, weight="medium", color="gray.800"),
                                         spacing="1",
                                         align="center"
                                     ),
